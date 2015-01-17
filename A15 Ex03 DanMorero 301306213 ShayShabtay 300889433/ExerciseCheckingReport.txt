@@ -1,0 +1,9 @@
+==========================Exercise Checking Report==========================
+Exercise No...........: 03
+First Student Details.: 300889433 - Shay Shabtay
+Second Student Details.: 301306213 - Dan Morero
+Delivery Date.........: 22 - January - 2015
+Delivered In Delay....: No
+Delay Reason..........:  /
+Comments..............: Desig patter is registered as tester but there are no too many followers for him (about 7 followers when m_CollectionLimit = 100).
+========================End Exercise Checking Report========================
