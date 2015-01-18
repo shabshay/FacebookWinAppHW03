@@ -32,18 +32,25 @@ namespace FacebookWinFormApplication.Followers
         {
             if (m_FileBuilder != null)
             {
-                int count = 0;
-                List<FollowerStatisticsData> tempData = new List<FollowerStatisticsData>();
-
-                foreach (FollowerStatisticsData data in i_FollowersStatisticsData)
+                if (i_FollowersStatisticsData.Count < m_ResultsPerFile)
                 {
-                    tempData.Add(data);
-                    count++;
+                    m_FileBuilder.BuildStatisticsFile(i_Path, i_FollowersStatisticsData);
+                }
+                else
+                {
+                    int count = 0;
+                    List<FollowerStatisticsData> tempData = new List<FollowerStatisticsData>();
 
-                    if (count % m_ResultsPerFile == 0)
+                    foreach (FollowerStatisticsData data in i_FollowersStatisticsData)
                     {
-                        m_FileBuilder.BuildStatisticsFile(i_Path + count, tempData);
-                        tempData.Clear();
+                        tempData.Add(data);
+                        count++;
+
+                        if (count % m_ResultsPerFile == 0)
+                        {
+                            m_FileBuilder.BuildStatisticsFile(i_Path + count, tempData);
+                            tempData.Clear();
+                        }
                     }
                 }
             }

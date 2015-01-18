@@ -248,17 +248,15 @@ namespace FacebookWinFormApplication.Followers
                 {
                     throw new Exception("criteria should not be empty");
                 }
-                else
+                
+                followersProvider = new FollowersProvider(m_StatisticsFileBuilder, i_ProgressObserver);
+                foreach (eFollowerCriteria criteria in m_FollowingCriterias)
                 {
-                    followersProvider = new FollowersProvider(m_StatisticsFileBuilder, i_ProgressObserver);
-                    foreach (eFollowerCriteria criteria in m_FollowingCriterias)
-                    {
-                        FollowersParser parser = ParserFactory.Create(criteria);
+                    FollowersParser parser = ParserFactory.Create(criteria);
 
-                        followersProvider.AddCriteriaParser(criteria, parser);
-                    }
+                    followersProvider.AddCriteriaParser(criteria, parser);
                 }
-              
+                
                 return followersProvider;
             }
         }
