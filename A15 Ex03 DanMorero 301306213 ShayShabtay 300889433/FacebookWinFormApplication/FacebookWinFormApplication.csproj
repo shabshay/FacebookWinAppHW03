@@ -57,8 +57,10 @@
     <Compile Include="Followers\eFollowerCriteria.cs" />
     <Compile Include="Followers\FollowersStatisticsFileBuilderJSON.cs" />
     <Compile Include="Followers\FollowersStatisticsFileBuilderXML.cs" />
+    <Compile Include="Followers\FollowersStatisticsFileSeperator.cs" />
     <Compile Include="Followers\FollowerStatisticsData.cs" />
     <Compile Include="Followers\IFollowersStatisticsFileBuilder.cs" />
+    <Compile Include="Followers\IFollowersStatisticsFileDecorator.cs" />
     <Compile Include="Followers\IProgressObservable.cs" />
     <Compile Include="Followers\IProgressObserver.cs" />
     <Compile Include="Followers\ParserFactory.cs" />

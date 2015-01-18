@@ -147,7 +147,7 @@ namespace FacebookWinFormApplication.Followers
             // Strategy executing
             if (m_StatisticsFileBuilder != null)
             {
-                m_StatisticsFileBuilder.BuildStatisticsFile(@"Statistics.txt",followersStatisticsData);
+                m_StatisticsFileBuilder.BuildStatisticsFile(@"Statistics.txt", followersStatisticsData);
             }
             UpdateObserverProgress(100);
 

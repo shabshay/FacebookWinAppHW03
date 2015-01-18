@@ -59,9 +59,16 @@
             this.radioButtonNone = new System.Windows.Forms.RadioButton();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.radioButtonResultsOneFile = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton50 = new System.Windows.Forms.RadioButton();
+            this.radioButton100 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePictureBoxFollower)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -87,7 +94,7 @@
             this.textBoxStatus.Location = new System.Drawing.Point(279, 18);
             this.textBoxStatus.Name = "textBoxStatus";
             this.textBoxStatus.ReadOnly = true;
-            this.textBoxStatus.Size = new System.Drawing.Size(453, 20);
+            this.textBoxStatus.Size = new System.Drawing.Size(474, 20);
             this.textBoxStatus.TabIndex = 2;
             // 
             // labelForStatus
@@ -234,13 +241,13 @@
             // labelIns
             // 
             this.labelIns.AutoSize = true;
-            this.labelIns.Location = new System.Drawing.Point(368, 205);
+            this.labelIns.Location = new System.Drawing.Point(347, 214);
             this.labelIns.Name = "labelIns";
-            this.labelIns.Size = new System.Drawing.Size(288, 52);
+            this.labelIns.Size = new System.Drawing.Size(246, 65);
             this.labelIns.TabIndex = 26;
-            this.labelIns.Text = "The friends list is sorted from your most follower friend in the \r\ntop to your le" +
-    "ast follower friend in the bottom.\r\n\r\nYou can click your friend\'s name to see hi" +
-    "s picture.";
+            this.labelIns.Text = "The friends list is sorted from your most follower \r\nfriend in the top to your le" +
+    "ast follower friend in \r\nthe bottom.\r\n\r\nYou can click your friend\'s name to see " +
+    "his picture.";
             // 
             // checkBox1
             // 
@@ -304,7 +311,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(590, 80);
+            this.label1.Location = new System.Drawing.Point(585, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 31;
@@ -314,7 +321,7 @@
             // 
             this.radioButtonXML.AutoSize = true;
             this.radioButtonXML.Checked = true;
-            this.radioButtonXML.Location = new System.Drawing.Point(593, 116);
+            this.radioButtonXML.Location = new System.Drawing.Point(588, 92);
             this.radioButtonXML.Name = "radioButtonXML";
             this.radioButtonXML.Size = new System.Drawing.Size(47, 17);
             this.radioButtonXML.TabIndex = 32;
@@ -326,11 +333,10 @@
             // radioButtonJSON
             // 
             this.radioButtonJSON.AutoSize = true;
-            this.radioButtonJSON.Location = new System.Drawing.Point(593, 137);
+            this.radioButtonJSON.Location = new System.Drawing.Point(588, 113);
             this.radioButtonJSON.Name = "radioButtonJSON";
             this.radioButtonJSON.Size = new System.Drawing.Size(53, 17);
             this.radioButtonJSON.TabIndex = 33;
-            this.radioButtonJSON.TabStop = true;
             this.radioButtonJSON.Text = "JSON";
             this.radioButtonJSON.UseVisualStyleBackColor = true;
             this.radioButtonJSON.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
@@ -338,11 +344,10 @@
             // radioButtonNone
             // 
             this.radioButtonNone.AutoSize = true;
-            this.radioButtonNone.Location = new System.Drawing.Point(593, 160);
+            this.radioButtonNone.Location = new System.Drawing.Point(588, 136);
             this.radioButtonNone.Name = "radioButtonNone";
             this.radioButtonNone.Size = new System.Drawing.Size(51, 17);
             this.radioButtonNone.TabIndex = 34;
-            this.radioButtonNone.TabStop = true;
             this.radioButtonNone.Text = "None";
             this.radioButtonNone.UseVisualStyleBackColor = true;
             this.radioButtonNone.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
@@ -357,17 +362,85 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(590, 93);
+            this.label2.Location = new System.Drawing.Point(585, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 13);
             this.label2.TabIndex = 36;
             this.label2.Text = "(will be saved in \'Statistics.txt\')";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Number of results per file:";
+            // 
+            // radioButtonResultsOneFile
+            // 
+            this.radioButtonResultsOneFile.AutoSize = true;
+            this.radioButtonResultsOneFile.Checked = true;
+            this.radioButtonResultsOneFile.Location = new System.Drawing.Point(6, 28);
+            this.radioButtonResultsOneFile.Name = "radioButtonResultsOneFile";
+            this.radioButtonResultsOneFile.Size = new System.Drawing.Size(61, 17);
+            this.radioButtonResultsOneFile.TabIndex = 38;
+            this.radioButtonResultsOneFile.TabStop = true;
+            this.radioButtonResultsOneFile.Text = "One file";
+            this.radioButtonResultsOneFile.UseVisualStyleBackColor = true;
+            this.radioButtonResultsOneFile.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(6, 51);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(84, 17);
+            this.radioButton10.TabIndex = 39;
+            this.radioButton10.Text = "10 Followers";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton100);
+            this.panel1.Controls.Add(this.radioButton50);
+            this.panel1.Controls.Add(this.radioButtonResultsOneFile);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.radioButton10);
+            this.panel1.Location = new System.Drawing.Point(609, 159);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(144, 123);
+            this.panel1.TabIndex = 40;
+            // 
+            // radioButton50
+            // 
+            this.radioButton50.AutoSize = true;
+            this.radioButton50.Location = new System.Drawing.Point(6, 74);
+            this.radioButton50.Name = "radioButton50";
+            this.radioButton50.Size = new System.Drawing.Size(84, 17);
+            this.radioButton50.TabIndex = 40;
+            this.radioButton50.Text = "50 Followers";
+            this.radioButton50.UseVisualStyleBackColor = true;
+            this.radioButton50.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
+            // 
+            // radioButton100
+            // 
+            this.radioButton100.AutoSize = true;
+            this.radioButton100.Location = new System.Drawing.Point(6, 97);
+            this.radioButton100.Name = "radioButton100";
+            this.radioButton100.Size = new System.Drawing.Size(90, 17);
+            this.radioButton100.TabIndex = 41;
+            this.radioButton100.Text = "100 Followers";
+            this.radioButton100.UseVisualStyleBackColor = true;
+            this.radioButton100.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
+            // 
             // FormFBApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 480);
+            this.ClientSize = new System.Drawing.Size(764, 480);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.radioButtonNone);
@@ -402,6 +475,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePictureBoxFollower)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,6 +514,12 @@
         private System.Windows.Forms.RadioButton radioButtonNone;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton radioButtonResultsOneFile;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButton50;
+        private System.Windows.Forms.RadioButton radioButton100;
     }
 }
 

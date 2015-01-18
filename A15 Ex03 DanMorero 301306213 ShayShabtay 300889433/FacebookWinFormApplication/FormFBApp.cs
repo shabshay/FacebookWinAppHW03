@@ -42,17 +42,43 @@ namespace FacebookWinFormApplication
         #region Implementation
         private void SetFollowersStatisticsFileBuilder()
         {
+            IFollowersStatisticsFileBuilder fileBuilder = null;
+            int resultsPerFile = 0;
+
+            // XML or JSON
             if (radioButtonXML.Checked)
             {
-                m_FollowersBuilder.SetStatisticsFileBuilder(new FollowersStatisticsFileBuilderXML());
+                fileBuilder = new FollowersStatisticsFileBuilderXML();
             }
             else if (radioButtonJSON.Checked)
             {
-                m_FollowersBuilder.SetStatisticsFileBuilder(new FollowersStatisticsFileBuilderJSON());
+                fileBuilder = new FollowersStatisticsFileBuilderJSON();
             }
             else if (radioButtonNone.Checked)
             {
-                m_FollowersBuilder.SetStatisticsFileBuilder(null);
+                fileBuilder = null;
+            }
+
+            // Number of results per file
+            if (radioButton10.Checked)
+            {
+                resultsPerFile = 10;
+            }
+            else if (radioButton50.Checked)
+            {
+                resultsPerFile = 50;
+            }
+            else if (radioButton100.Checked)
+            {
+                resultsPerFile = 100;
+            }
+
+            if (fileBuilder != null)
+            {
+                if (resultsPerFile > 0)
+                    m_FollowersBuilder.SetStatisticsFileBuilder(new FollowersStatisticsFileSeperator(fileBuilder, resultsPerFile));
+                else
+                    m_FollowersBuilder.SetStatisticsFileBuilder(fileBuilder);
             }
         }
 
@@ -310,7 +336,7 @@ namespace FacebookWinFormApplication
 
         private void radioButtonStatistics_CheckedChanged(object sender, EventArgs e)
         {
-            this.SetFollowersStatisticsFileBuilder();
+            SetFollowersStatisticsFileBuilder();
         }
         #endregion Event Handlers
     }
