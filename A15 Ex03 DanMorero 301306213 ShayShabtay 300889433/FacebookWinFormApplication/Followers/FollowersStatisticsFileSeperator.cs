@@ -52,6 +52,11 @@ namespace FacebookWinFormApplication.Followers
                             tempData.Clear();
                         }
                     }
+
+                    if (tempData.Count > 0)
+                    {
+                        m_FileBuilder.BuildStatisticsFile(i_Path + count, tempData);
+                    }
                 }
             }
         }
