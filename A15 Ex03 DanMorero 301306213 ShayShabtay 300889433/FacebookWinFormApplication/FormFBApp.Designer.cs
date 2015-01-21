@@ -63,8 +63,8 @@
             this.radioButtonResultsOneFile = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton50 = new System.Windows.Forms.RadioButton();
             this.radioButton100 = new System.Windows.Forms.RadioButton();
+            this.radioButton50 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePictureBoxFollower)).BeginInit();
@@ -320,12 +320,10 @@
             // radioButtonXML
             // 
             this.radioButtonXML.AutoSize = true;
-            this.radioButtonXML.Checked = true;
-            this.radioButtonXML.Location = new System.Drawing.Point(588, 92);
+            this.radioButtonXML.Location = new System.Drawing.Point(588, 136);
             this.radioButtonXML.Name = "radioButtonXML";
             this.radioButtonXML.Size = new System.Drawing.Size(47, 17);
             this.radioButtonXML.TabIndex = 32;
-            this.radioButtonXML.TabStop = true;
             this.radioButtonXML.Text = "XML";
             this.radioButtonXML.UseVisualStyleBackColor = true;
             this.radioButtonXML.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
@@ -344,10 +342,12 @@
             // radioButtonNone
             // 
             this.radioButtonNone.AutoSize = true;
-            this.radioButtonNone.Location = new System.Drawing.Point(588, 136);
+            this.radioButtonNone.Checked = true;
+            this.radioButtonNone.Location = new System.Drawing.Point(588, 90);
             this.radioButtonNone.Name = "radioButtonNone";
             this.radioButtonNone.Size = new System.Drawing.Size(51, 17);
             this.radioButtonNone.TabIndex = 34;
+            this.radioButtonNone.TabStop = true;
             this.radioButtonNone.Text = "None";
             this.radioButtonNone.UseVisualStyleBackColor = true;
             this.radioButtonNone.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
@@ -364,9 +364,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(585, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 13);
+            this.label2.Size = new System.Drawing.Size(151, 13);
             this.label2.TabIndex = 36;
-            this.label2.Text = "(will be saved in \'Statistics.txt\')";
+            this.label2.Text = "(will be saved as \'Statistics.txt\')";
             // 
             // label3
             // 
@@ -413,17 +413,6 @@
             this.panel1.Size = new System.Drawing.Size(144, 123);
             this.panel1.TabIndex = 40;
             // 
-            // radioButton50
-            // 
-            this.radioButton50.AutoSize = true;
-            this.radioButton50.Location = new System.Drawing.Point(6, 74);
-            this.radioButton50.Name = "radioButton50";
-            this.radioButton50.Size = new System.Drawing.Size(84, 17);
-            this.radioButton50.TabIndex = 40;
-            this.radioButton50.Text = "50 Followers";
-            this.radioButton50.UseVisualStyleBackColor = true;
-            this.radioButton50.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
-            // 
             // radioButton100
             // 
             this.radioButton100.AutoSize = true;
@@ -434,6 +423,17 @@
             this.radioButton100.Text = "100 Followers";
             this.radioButton100.UseVisualStyleBackColor = true;
             this.radioButton100.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
+            // 
+            // radioButton50
+            // 
+            this.radioButton50.AutoSize = true;
+            this.radioButton50.Location = new System.Drawing.Point(6, 74);
+            this.radioButton50.Name = "radioButton50";
+            this.radioButton50.Size = new System.Drawing.Size(84, 17);
+            this.radioButton50.TabIndex = 40;
+            this.radioButton50.Text = "50 Followers";
+            this.radioButton50.UseVisualStyleBackColor = true;
+            this.radioButton50.CheckedChanged += new System.EventHandler(this.radioButtonStatistics_CheckedChanged);
             // 
             // FormFBApp
             // 

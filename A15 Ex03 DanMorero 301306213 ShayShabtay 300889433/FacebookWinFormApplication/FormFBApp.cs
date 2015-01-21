@@ -22,7 +22,7 @@ namespace FacebookWinFormApplication
         #region Members
         private const string k_ApplicationID = "777317175673043";
         private User m_LoggedInUser;
-        private int m_CollectionLimit = 40;
+        private int m_CollectionLimit = 100;
         private FollowersProvider.Builder m_FollowersBuilder;
 
         #endregion Members

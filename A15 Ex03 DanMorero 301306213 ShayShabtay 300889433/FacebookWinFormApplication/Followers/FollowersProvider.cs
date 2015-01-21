@@ -55,6 +55,12 @@ namespace FacebookWinFormApplication.Followers
         private IFollowersStatisticsFileBuilder m_StatisticsFileBuilder;
         private IProgressObserver m_ProgressObserver;
 
+        // Progress state percent
+        private const int k_StepStart = 20;
+        private const int k_Step1 = 70;
+        private const int k_Step2 = 90;
+        private const int k_StepFinish = 100;
+
         private FollowersProvider(IFollowersStatisticsFileBuilder i_FollowerStatisticsFileBuilder, IProgressObserver i_ProgressObserver) 
         {
             m_CriteriaParsers = new Dictionary<eFollowerCriteria, FollowersParser>();
@@ -107,7 +113,7 @@ namespace FacebookWinFormApplication.Followers
         /// <returns>Sorted list of the user's facebook friends from the most follower friend.</returns>
         public SortedList<int, User> GetFollowersSortedList(User i_User)
         {
-            UpdateObserverProgress(20);
+            UpdateObserverProgress(k_StepStart);
 
             SortedList<int, User> sortedListRetVal = new SortedList<int, User>();
             Dictionary<string, int> statistics;
@@ -116,7 +122,7 @@ namespace FacebookWinFormApplication.Followers
 
             FetchFollowers(i_User, out statistics, out followers);
 
-            UpdateObserverProgress(70);
+            UpdateObserverProgress(k_Step1);
 
             for (int i = 0; i < followers.Count; i++)
             {
@@ -142,14 +148,14 @@ namespace FacebookWinFormApplication.Followers
                 }
             }
 
-            UpdateObserverProgress(90);
+            UpdateObserverProgress(k_Step2);
 
             // Strategy executing
             if (m_StatisticsFileBuilder != null)
             {
                 m_StatisticsFileBuilder.BuildStatisticsFile(@"Statistics.txt", followersStatisticsData);
             }
-            UpdateObserverProgress(100);
+            UpdateObserverProgress(k_StepFinish);
 
             return sortedListRetVal;
         }
